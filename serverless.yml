@@ -1,0 +1,45 @@
+service: poly-backend
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+custom:
+  functionsBasePath: src/handlers
+
+functions:
+  userRead:
+    handler: user.handler
+    events:
+      - http:
+          path: user
+          method: get
+  userReadById:
+    handler: user.handler
+    events:
+      - http:
+          path: user/{id}
+          method: get
+  userCreate:
+    handler: user.handler
+    events:
+      - http:
+          path: user
+          method: post
+  userUpdate:
+    handler: user.handler
+    events:
+      - http:
+          path: user/{id}
+          method: put
+  userDelete:
+    handler: user.handler
+    events:
+      - http:
+          path: user/{id}
+          method: delete
+plugins:
+  - serverless-offline
+  - serverless-functions-base-path
+  - serverless-dotenv-plugin

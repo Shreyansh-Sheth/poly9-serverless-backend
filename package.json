@@ -1,0 +1,20 @@
+{
+  "name": "poly-backend",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.8.3",
+    "serverless-http": "^2.7.0",
+    "zod": "^3.20.2",
+    "zod-express-middleware": "^1.4.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^12.0.4",
+    "serverless-dotenv-plugin": "^4.0.2",
+    "serverless-functions-base-path": "^1.0.32"
+  },
+  "scripts": {
+    "start": "serverless offline start "
+  }
+}
